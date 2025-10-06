@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Wasted | E-Waste Recycling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-dark': '#0d1a26',
+              'brand-blue': '#1a3a59',
+              'brand-teal': '#285e61',
+              'brand-green': '#4caf50',
+              'brand-light-green': '#80e27e',
+              'brand-light': '#f0f4f8',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'bar-raise': 'barRaise 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              'pulse': 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              barRaise: {
+                '0%': { opacity: '0', transform: 'scaleY(0)' },
+                '100%': { opacity: '1', transform: 'scaleY(1)' },
+              },
+              pulse: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.1)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0"
+  }
+}
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-brand-dark text-brand-light">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="#hero" class="flex items-center space-x-3">
+            <img src="https://picsum.photos/seed/ewastelogo/40/40" alt="E-Wasted Logo" class="w-8 h-8 rounded-full" />
+            <span class="text-2xl font-bold text-white">E-Wasted</span>
+          </a>
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="#services" class="text-brand-light hover:text-brand-green transition-colors duration-300 font-medium">Services</a>
+            <a href="#identifier" class="text-brand-light hover:text-brand-green transition-colors duration-300 font-medium">Identifier</a>
+            <a href="#process" class="text-brand-light hover:text-brand-green transition-colors duration-300 font-medium">Our Process</a>
+            <a href="#impact" class="text-brand-light hover:text-brand-green transition-colors duration-300 font-medium">Our Goals</a>
+            <a href="#ai-tools" class="text-brand-light hover:text-brand-green transition-colors duration-300 font-medium">AI Smart Tools</a>
+            <a href="#contact" class="text-brand-light hover:text-brand-green transition-colors duration-300 font-medium">Contact</a>
+          </nav>
+           <div class="hidden md:flex items-center space-x-4">
+                <button data-scroll-to="#contact" class="bg-brand-green hover:bg-brand-light-green text-brand-dark font-bold py-2 px-6 rounded-full transition-transform duration-300 ease-in-out transform hover:scale-105">
+                    Schedule Pickup
+                </button>
+           </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+          <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <img src="https://picsum.photos/seed/ewastebg/1920/1080" alt="E-waste background" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="relative z-20 container mx-auto px-6 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5)">
+              Give Your Electronics a Second Life
+            </h1>
+            <p class="text-lg md:text-2xl max-w-3xl mx-auto mb-8 text-brand-light" style="text-shadow: 0 1px 3px rgba(0,0,0,0.5)">
+              Securely and sustainably recycle your e-waste with E-Wasted. We turn today's gadgets into tomorrow's resources.
+            </p>
+            <button data-scroll-to="#contact" class="bg-brand-green hover:bg-brand-light-green text-brand-dark font-bold py-4 px-10 rounded-full text-lg transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+              Schedule Pickup
+            </button>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-brand-dark">
+          <div class="container mx-auto px-6">
+            <div class="text-center mb-12 animate-fade-in-up">
+              <h2 class="text-4xl font-extrabold text-white">Our Services</h2>
+              <p class="mt-4 text-lg text-brand-light opacity-80 max-w-2xl mx-auto">
+                Comprehensive solutions for all your e-waste recycling needs.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Service Cards will be injected here by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Identifier Section -->
+        <section id="identifier" class="py-20 bg-brand-blue">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-white">Identify Your E-Waste</h2>
+                    <p class="mt-4 text-lg text-brand-light opacity-80 max-w-2xl mx-auto">
+                        Not sure what you have? Upload a photo and our AI will identify it and check if it's recyclable.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto bg-brand-dark rounded-lg shadow-2xl p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="relative border-2 border-dashed border-brand-teal rounded-lg h-64 flex items-center justify-center">
+                            <img id="ewaste-image-preview" src="" alt="e-waste preview" class="absolute inset-0 w-full h-full object-contain rounded-lg hidden p-2" />
+                            <label for="ewaste-upload-input" id="ewaste-upload-label" class="cursor-pointer text-center p-4">
+                                <svg class="w-16 h-16 mx-auto text-brand-teal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                                <span class="mt-2 block font-medium text-brand-light">Click to upload an image</span>
+                                <span class="mt-1 block text-sm text-brand-light opacity-60">PNG, JPG, or WEBP</span>
+                            </label>
+                            <input id="ewaste-upload-input" type="file" class="hidden" accept="image/png, image/jpeg, image/webp" />
+                        </div>
+                        <div id="identifier-result-area" class="text-center">
+                            <!-- JS will inject button/results here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-20 bg-brand-dark">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-white">Our 4-Step Process</h2>
+                    <p class="mt-4 text-lg text-brand-light opacity-80 max-w-2xl mx-auto">
+                        Simple, secure, and transparent from start to finish.
+                    </p>
+                </div>
+                <div id="process-steps-container" class="flex flex-col md:flex-row items-start justify-center space-y-8 md:space-y-0 md:space-x-4">
+                    <!-- Process steps will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact" class="py-20 bg-brand-blue">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-white">Our Environmental Goals</h2>
+                    <p class="mt-4 text-lg text-brand-light opacity-80 max-w-2xl mx-auto">
+                        We are committed to making a tangible difference for our planet.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                     <div class="bg-brand-dark p-8 rounded-lg shadow-lg animate-fade-in-up">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-brand-light-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg>
+                        <h3 class="text-2xl font-bold text-white mb-2">Maximize Recovery</h3>
+                        <p class="text-brand-light opacity-80">Recover over 95% of valuable materials from all collected e-waste to fuel the circular economy.</p>
+                    </div>
+                     <div class="bg-brand-dark p-8 rounded-lg shadow-lg animate-fade-in-up" style="animation-delay: 200ms;">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-brand-light-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <h3 class="text-2xl font-bold text-white mb-2">Promote Reuse</h3>
+                        <p class="text-brand-light opacity-80">Refurbish and redeploy at least 30% of still-functional devices, extending their lifecycle.</p>
+                    </div>
+                     <div class="bg-brand-dark p-8 rounded-lg shadow-lg animate-fade-in-up" style="animation-delay: 400ms;">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-brand-light-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 15.123A.5.5 0 017.5 15h9a.5.5 0 01-.381.123l-4.119.771a.5.5 0 01-.119 0l-4.119-.771z" /></svg>
+                        <h3 class="text-2xl font-bold text-white mb-2">Zero Landfill</h3>
+                        <p class="text-brand-light opacity-80">Ensure that 100% of the hazardous e-waste we process is diverted from landfills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Smart Tools Section -->
+        <section id="ai-tools" class="py-20 bg-brand-dark">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12 animate-fade-in-up">
+                    <h2 class="text-4xl font-extrabold text-white">AI Smart Tools</h2>
+                    <p class="mt-4 text-lg text-brand-light opacity-80 max-w-2xl mx-auto">
+                        Intelligent tools to make your recycling journey smarter and more impactful.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Smart Locator -->
+                    <div class="bg-brand-blue p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-white mb-4">Smart Recycling Locator</h3>
+                        <p class="text-brand-light opacity-80 mb-6">Our AI recommends the best recycling centers for your specific device, based on your location.</p>
+                        <div class="space-y-4">
+                            <input id="device-type-locator" type="text" placeholder="e.g., Laptop, iPhone 13, TV" class="w-full bg-brand-dark border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green">
+                            <button id="find-centers-btn" class="w-full bg-brand-teal hover:bg-brand-green text-white font-bold py-3 px-6 rounded-full transition-colors">Find Centers Near Me</button>
+                        </div>
+                        <div id="locator-results" class="mt-6"></div>
+                    </div>
+                    <!-- Impact & Reuse Analyzer -->
+                    <div class="bg-brand-blue p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-white mb-4">Device Impact & Reuse Analyzer</h3>
+                        <p class="text-brand-light opacity-80 mb-6">Discover the environmental impact of recycling your device and get AI-powered advice on whether to reuse or refurbish it.</p>
+                        <form id="analyzer-form" class="space-y-4">
+                            <input id="device-name-analyzer" type="text" placeholder="e.g., MacBook Pro 2018" required class="w-full bg-brand-dark border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green">
+                            <select id="device-condition" required class="w-full bg-brand-dark border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green">
+                                <option value="" disabled selected>Select device condition...</option>
+                                <option value="Working">Working Perfectly</option>
+                                <option value="Minor Issues">Has Minor Issues</option>
+                                <option value="Broken">Broken / Not Working</option>
+                            </select>
+                             <button type="submit" class="w-full bg-brand-teal hover:bg-brand-green text-white font-bold py-3 px-6 rounded-full transition-colors">Analyze Device</button>
+                        </form>
+                        <div id="analyzer-results" class="mt-6"></div>
+                    </div>
+                    <!-- Data Security Advisor -->
+                    <div class="bg-brand-blue p-8 rounded-lg shadow-lg lg:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-4">Data Security Advisor</h3>
+                        <p class="text-brand-light opacity-80 mb-6">Worried about your personal data? Our AI provides step-by-step guides on how to securely wipe your devices before recycling.</p>
+                        <form id="security-advisor-form" class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+                            <input id="device-type-security" type="text" placeholder="e.g., Windows Laptop, Android Phone" required class="w-full bg-brand-dark border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green">
+                            <button type="submit" class="w-full sm:w-auto bg-brand-teal hover:bg-brand-green text-white font-bold py-3 px-8 rounded-full transition-colors whitespace-nowrap">Get Wiping Instructions</button>
+                        </form>
+                        <div id="security-advisor-results" class="mt-6"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-brand-blue">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-white">Schedule a Pickup</h2>
+                    <p class="mt-4 text-lg text-brand-light opacity-80 max-w-2xl mx-auto">
+                        Ready to recycle? Fill out the form below to get started. Our team will contact you to arrange a convenient pickup time.
+                    </p>
+                </div>
+                <div id="contact-form-container" class="max-w-2xl mx-auto bg-brand-dark rounded-lg shadow-2xl p-8">
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="Your Name" class="bg-brand-blue border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green">
+                            <input type="email" name="email" placeholder="Your Email" class="bg-brand-blue border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green">
+                        </div>
+                        <div class="mt-6">
+                            <select name="service" class="w-full bg-brand-blue border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green">
+                                <option>Select a service...</option>
+                                <option>Residential Drop-off Inquiry</option>
+                                <option>Corporate Pickup Request</option>
+                                <option>Data Destruction Inquiry</option>
+                                <option>General Question</option>
+                            </select>
+                        </div>
+                        <div class="mt-6">
+                            <textarea name="message" rows="5" placeholder="Tell us about the items you want to recycle..." class="w-full bg-brand-blue border border-brand-teal text-white rounded-md p-3 focus:ring-brand-green focus:border-brand-green"></textarea>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <button id="contact-submit-button" type="submit" class="bg-brand-green hover:bg-brand-light-green text-brand-dark font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+                                Send Message
+                            </button>
+                            <p id="contact-form-error" class="text-red-400 mt-4 hidden"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-blue py-8 border-t border-brand-teal/20">
+      <div class="container mx-auto px-6 text-center text-brand-light opacity-80">
+        <p>&copy; 2024 E-Wasted. All rights reserved.</p>
+        <p class="mt-2">
+          Contact us: <a href="mailto:ewasted.co@gmail.com" class="text-brand-light-green hover:underline">ewasted.co@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <aside id="chatbot-container" class="fixed bottom-6 right-6 z-50">
+        <!-- Button -->
+        <button id="chatbot-toggle-button" class="bg-brand-green text-brand-dark rounded-full p-4 shadow-lg animate-pulse hover:animate-none transition-transform transform hover:scale-110">
+            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+        </button>
+        <!-- Window -->
+        <div id="chatbot-window" class="hidden absolute bottom-20 right-0 w-80 h-[28rem] bg-brand-dark rounded-lg shadow-2xl flex-col border border-brand-teal/50">
+            <div class="flex items-center justify-between p-4 bg-brand-blue rounded-t-lg">
+                <h3 class="text-lg font-bold text-white">E-Wasted Assistant</h3>
+                <button id="chatbot-close-button" class="text-brand-light hover:text-white">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <div id="chatbot-messages" class="flex-1 p-4 space-y-4 overflow-y-auto">
+                <!-- Messages will be injected here -->
+            </div>
+            <div class="p-4 border-t border-brand-teal/50">
+                <form id="chatbot-form" class="flex items-center space-x-2">
+                    <input id="chatbot-input" type="text" placeholder="Ask a question..." class="flex-1 bg-brand-blue border border-brand-teal text-white rounded-full py-2 px-4 focus:ring-brand-green focus:border-brand-green">
+                    <button id="chatbot-submit-button" type="submit" class="bg-brand-green text-brand-dark rounded-full p-2">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </aside>
+    
+    <script type="module" src="index.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
